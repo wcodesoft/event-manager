@@ -25,10 +25,11 @@ message Event {
 
 /*
 Response of an event.
-Next ID: 2
+Next ID: 3
  */
 message Response {
   string message = 1;
+  optional string error = 2;
 }
 
 /*
