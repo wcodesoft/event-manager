@@ -5,7 +5,7 @@ option go_package = "github.com/wcodesoft/event-manager/protos/go/event-manager.
 
 /*
 Basic supported actions of any microservice on the repository.
-Next ID:4
+Next ID: 4
  */
 enum Action{
   CREATE = 0;
@@ -20,5 +20,21 @@ Next ID: 3
 */
 message Event {
   Action action = 1;
-  bytes message = 2;
+  string message = 2;
+}
+
+/*
+Response of an event.
+Next ID: 2
+ */
+message Response {
+  string message = 1;
+}
+
+/*
+Basic request message with ID only.
+Next ID: 2
+ */
+message RequestId {
+  string id = 1;
 }
