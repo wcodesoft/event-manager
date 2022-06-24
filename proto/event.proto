@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package org.wcode.proto.eventmanager;
+option go_package = "github.com/wcodesoft/event-manager/protos/go/event-manager.proto";
+
+/*
+Basic supported actions of any microservice on the repository.
+Next ID:4
+ */
+enum Action{
+  CREATE = 0;
+  READ = 1;
+  UPDATE = 2;
+  DELETE = 3;
+}
+
+/*
+Definition of an event.
+Next ID: 3
+*/
+message Event {
+  Action action = 1;
+  bytes message = 2;
+}
