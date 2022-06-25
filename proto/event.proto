@@ -25,17 +25,19 @@ message Event {
 
 /*
 Response of an event.
-Next ID: 3
+Next ID: 4
  */
 message Response {
-  string message = 1;
+  bool success = 1;
   optional string error = 2;
+  repeated string result = 3;
 }
 
 /*
-Basic request message with ID only.
-Next ID: 2
+Query definitions supported by the current server structure
+Next ID: 4
  */
-message RequestId {
-  string id = 1;
+message Query {
+  bool all_entries = 1;
+  optional string uuid = 2;
 }
